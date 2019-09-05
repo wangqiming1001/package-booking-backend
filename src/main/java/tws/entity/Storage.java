@@ -1,6 +1,5 @@
 package tws.entity;
 
-import java.util.Date;
 
 public class Storage {
 	private String id;

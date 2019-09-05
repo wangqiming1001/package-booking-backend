@@ -20,15 +20,23 @@ public class StorageService {
 	private StorageMapper storageMapper;
 	
 	public List<Storage> selectAll() {
-	    return storageMapper.selectAll();
+		List<Storage> storages = storageMapper.selectAll();
+		for (int i = 0; i < storages.size(); i++) {
+			String qq = storages.get(i).getState();
+			if (storages.get(i).getState().equals("0") ) {
+				storages.get(i).setState("未预约");
+			}else if(storages.get(i).getState().equals("1")){
+				storages.get(i).setState("已预约");
+			}else if(storages.get(i).getState().equals("2")){
+				storages.get(i).setState("已取件");
+			}
+		}
+	    return storages;
 	}
 	
 	public Storage insertStorage(Storage storage) {
 		String StorageId = UUID.randomUUID().toString();
-//		Date date = new Date(); 
-//		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 		storage.setId(StorageId);
-//		storage.setTimeOfAppointment(format.format(date));
 		//未预约
 		storage.setState("0");
 		storageMapper.insertStorage(storage);
