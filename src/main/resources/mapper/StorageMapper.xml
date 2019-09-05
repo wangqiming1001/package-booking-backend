@@ -6,8 +6,17 @@
     </select>
 
     <insert id="insertStorage" parameterType="tws.entity.Storage">
-       insert into `storage`(`id`,`orderNumber`,`name`,`phone`,`weight`) 
+       insert into `storage`(`id`,`orderNumber`,`name`,`phone`,`weight`,`state`) 
        values
-       (#{storage.id},#{storage.orderNumber},#{storage.name},#{storage.phone},#{storage.weight});
+       (#{storage.id},#{storage.orderNumber},#{storage.name},#{storage.phone},#{storage.weight},#{storage.state});
     </insert>
+    
+    <update id="updatetTimeOfAppointment" parameterType="tws.entity.Storage">
+       update  `storage` 
+       set
+       timeOfAppointment = #{storage.timeOfAppointment}
+       where
+       orderNumber = #{storage.orderNumber};
+    </update>
+    
 </mapper>

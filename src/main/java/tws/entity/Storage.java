@@ -1,11 +1,16 @@
 package tws.entity;
 
+import java.util.Date;
+
 public class Storage {
 	private String id;
 	private String orderNumber;
 	private String name;
 	private String phone;
 	private String weight;
+	private String timeOfAppointment;
+	private String state;
+	
 	public String getId() {
 		return id;
 	}
@@ -36,13 +41,28 @@ public class Storage {
 	public void setWeight(String weight) {
 		this.weight = weight;
 	}
-	public Storage(String id, String orderNumber, String name, String phone, String weight) {
+	public String getTimeOfAppointment() {
+		return timeOfAppointment;
+	}
+	public void setTimeOfAppointment(String timeOfAppointment) {
+		this.timeOfAppointment = timeOfAppointment;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public Storage(String id, String orderNumber, String name, String phone, String weight, String timeOfAppointment,
+			String state) {
 		super();
 		this.id = id;
 		this.orderNumber = orderNumber;
 		this.name = name;
 		this.phone = phone;
 		this.weight = weight;
+		this.timeOfAppointment = timeOfAppointment;
+		this.state = state;
 	}
 	public Storage() {
 	}

@@ -9,5 +9,7 @@ CREATE TABLE storage (
   orderNumber VARCHAR(100) NOT NULL,
   name VARCHAR(64) NOT NULL,
   phone VARCHAR(100) NOT NULL,
-  weight  VARCHAR(100) NOT NULL
+  weight  VARCHAR(100) NOT NULL,
+  timeOfAppointment VARCHAR(100),
+  state VARCHAR(10)
 );
