@@ -14,7 +14,8 @@
     <update id="updatetTimeOfAppointment" parameterType="tws.entity.Storage">
        update  `storage` 
        set
-       timeOfAppointment = #{storage.timeOfAppointment}
+       timeOfAppointment = #{storage.timeOfAppointment},
+       state = #{storage.state}
        where
        orderNumber = #{storage.orderNumber};
     </update>
